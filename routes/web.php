@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SendEmailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,6 @@ use App\Http\Controllers\CategoryController;
 
 
 Route::resource('/category', CategoryController::class);
+
+
+Route::get('/send-email',[SendEmailController::class,'index']);
