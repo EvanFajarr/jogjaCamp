@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\Api\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,11 +23,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
     // Route::resource('yy', API\CategoryController::class);
 
+// Route::get('categorys', function(){
+//     return 'this kontol';
+// });
 
-    // Route::get('/users', 'App\Http\Controllers\API\CategoryController@index');
 
-    Route::get('categorys', [CategoryController::class, 'get']);
-Route::get('category/{id}', [CategoryController::class, 'get']);
-Route::post('category', [CategoryController::class, 'store']);
-Route::put('category/{id}', [CategoryController::class, 'update']);
-Route::delete('category/{id}', [CategoryController::class, 'destroy']);
+    Route::get('categorys', [CategoryController::class, 'index']);
+    Route::post('categorys', [CategoryController::class, 'store']);
+    Route::get('categorys/{id}', [CategoryController::class, 'show']);
+    Route::get('categorys/{id}/edit', [CategoryController::class, 'edit']);
+    Route::put('categorys/{id}/edit', [CategoryController::class, 'update']);
+    Route::delete('categorys/{id}/delete', [CategoryController::class, 'destroy']);
+
+
+// Route::get('category/{id}', [CategoryController::class, 'get']);
+// Route::post('category', [CategoryController::class, 'store']);
+// Route::put('category/{id}', [CategoryController::class, 'update']);
+// Route::delete('category/{id}', [CategoryController::class, 'destroy']);
