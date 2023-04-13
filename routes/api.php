@@ -21,11 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
    
 });
 
-    // Route::resource('yy', API\CategoryController::class);
-
-// Route::get('categorys', function(){
-//     return 'this kontol';
-// });
 
 
     Route::get('categorys', [CategoryController::class, 'index']);
@@ -36,7 +31,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     Route::delete('categorys/{id}/delete', [CategoryController::class, 'destroy']);
 
 
-// Route::get('category/{id}', [CategoryController::class, 'get']);
-// Route::post('category', [CategoryController::class, 'store']);
-// Route::put('category/{id}', [CategoryController::class, 'update']);
-// Route::delete('category/{id}', [CategoryController::class, 'destroy']);
+

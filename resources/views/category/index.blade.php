@@ -3,7 +3,7 @@
 
 
 
-        
+        @include('pesan.pesan')
         <!-- START category -->
         <div class="my-3 p-3 bg-body rounded shadow-sm">
                 <!-- FORM PENCARIAN -->

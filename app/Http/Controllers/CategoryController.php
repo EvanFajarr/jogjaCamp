@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\File;
+use Mail;
+use App\Models\User;
 use App\Models\category;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
 
 class CategoryController extends Controller
 {
@@ -125,5 +127,7 @@ class CategoryController extends Controller
     {
         category::where('id', $id)->delete();
         return redirect()->to('category')->with('success', 'Berhasil menghapus  data');
+
+       
     }
 }
