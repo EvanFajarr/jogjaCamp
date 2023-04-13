@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SendEmailController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +18,20 @@ use App\Http\Controllers\SendEmailController;
 
 
 
-Route::resource('/category', CategoryController::class);
 
 
-Route::get('/send-email',[SendEmailController::class,'index']);
+
+
+Auth::routes();
+
+
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', HomeController::class)->name('home');
+
+// Route::get('/',[LoginController::class,'index']);
+
+Route::middleware(['auth'])->group(function () {
+ 
+    Route::resource('/category', CategoryController::class);
+    Route::get('/send-email',[SendEmailController::class,'index']);
+  });

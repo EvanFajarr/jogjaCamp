@@ -1,9 +1,15 @@
-@extends('template.template')
-@section('konten')    
 
+  
 
-
-        @include('pesan.pesan')
+@extends('layouts.app')
+@section('content')  
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Data Category') }}</div>
+                <div class="card-body">
+                    @include('pesan.pesan')
         <!-- START category -->
         <div class="my-3 p-3 bg-body rounded shadow-sm">
                 <!-- FORM PENCARIAN -->
@@ -54,4 +60,10 @@
                 </table>
                {{$category->links()}}
           </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
           @endsection
